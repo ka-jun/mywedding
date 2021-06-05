@@ -13,5 +13,6 @@ class StaffMember < ApplicationRecord
     validates :area
     validates :since
     validates :text
+    validates :image
   end
 end

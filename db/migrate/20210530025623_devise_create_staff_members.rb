@@ -11,6 +11,7 @@ class DeviseCreateStaffMembers < ActiveRecord::Migration[6.0]
       t.string :area,               null: false
       t.date :since,                null: false
       t.text :text,                 null: false
+      t.string :image,              null: false
 
       ## Recoverable
       t.string   :reset_password_token
