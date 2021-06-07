@@ -10857,8 +10857,12 @@ html {
   min-height: 15rem;
 }
 
-.staff_members {
+.staff_members_list {
   display: flex;
-  height: 500px;
-  width: 100vw;
+  justify-content: space-around;
+}
+
+.staff_members {
+  height: 30vw;
+  width: 300px;
 }
