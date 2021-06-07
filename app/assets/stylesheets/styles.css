@@ -10844,7 +10844,7 @@ html {
   align-items: center;
   justify-content: center;
   height: 3rem;
-  width: 3rem;
+  width: 3rem;  
   font-size: 1.5rem;
 }
 
@@ -10855,4 +10855,10 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 15rem;
+}
+
+.staff_members {
+  display: flex;
+  height: 500px;
+  width: 100vw;
 }
