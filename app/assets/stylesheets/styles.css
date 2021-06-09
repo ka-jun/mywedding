@@ -1362,6 +1362,7 @@ progress {
   }
 
   .col-lg-7 {
+    justify-content: center;
     flex: 0 0 auto;
     width: 58.3333333333%;
   }
@@ -10849,8 +10850,6 @@ html {
 }
 
 .bg-featured-blog {
-  height: 100%;
-  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
