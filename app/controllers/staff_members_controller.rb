@@ -6,6 +6,10 @@ class StaffMembersController < ApplicationController
     @staff_members = StaffMember.order('created_at DESC')
   end
 
+  def new
+    @staff_member = StaffMember.new
+  end
+
   def show
     
   end
