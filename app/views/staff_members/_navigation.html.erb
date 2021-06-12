@@ -18,8 +18,8 @@
             <%# <%else%> %>
               <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Couple User</a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                  <li><a class="dropdown-item" href="blog-home.html">新規登録</a></li>
-                  <li><a class="dropdown-item" href="blog-post.html">ログイン</a></li>
+                  <li><%= link_to 'Sign up', new_user_registration_path, class:"dropdown-item" %></li>
+                  <li><%= link_to 'Login', new_user_session_path, class:"dropdown-item" %></li>
               </ul>
               <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Staff Member</a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
