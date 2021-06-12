@@ -15,7 +15,7 @@
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-        <%= render partial: "navigation" %>
+        <%= render partial: "layouts/shered/navigation" %>
             <!-- Header-->
             <header class="bg-dark py-5">
                 <div class="container px-5">
@@ -78,39 +78,42 @@
                     </div>
                 <div class="staff_members_list" >
                     <% @staff_members.each do |s|%>
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="staff_members">
-                            <div class="card h-100 shadow border-0">
-                                <%= image_tag s.image, class: "card-img-top"%>
-                                <div class="card-body p-4">
-                                <%= link_to staff_member_path(s.id) %>
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">New</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">
-                                    <%= s.first_name %>
-                                    <%= s.last_name %></h5></a>
-                                    <p class="card-text mb-0">
-                                    <%= s.text %>
-                                    </p>
-                                </div>
-                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <div class="small">
-                                                <div class="fw-bold">
-                                                <%= s.area %>
-                                                </div>
-                                                <div class="text-muted">since 
-                                                <%= s.since %>
+                        <li class="click">
+                            <%= link_to staff_member_path(s.id) do  %>
+                            <div class="row gx-5">
+                                <div class="col-lg-4 mb-5">
+                                    <div class="staff_members">
+                                    <div class="card h-100 shadow border-0">
+                                        <%= image_tag s.image, class: "card-img-top"%>
+                                        <div class="card-body p-4">
+                                            <%= link_to "click!!", staff_member_path(s.id), class: "badge bg-primary bg-gradient mb-2"%>
+                                            <a class="text-decoration-none link-dark stretched-link" href="#!">
+                                            <h5 class="card-title mb-3">
+                                            <%= s.first_name %>
+                                            <%= s.last_name %></h5></a>
+                                            <p class="card-text mb-0">
+                                            <%= s.text %>
+                                            </p>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                            <div class="d-flex align-items-end justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="small">
+                                                        <div class="fw-bold">
+                                                        <%= s.area %>
+                                                        </div>
+                                                        <div class="text-muted">since 
+                                                        <%= s.since %>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                        </div>
-                    </div>
+                            <% end %>
                     <% end %>
                     </div>
                 </div>
@@ -118,7 +121,7 @@
             </section>
         </main>
         <!-- Footer-->
-        <%= render partial: "footer"%>
+        <%= render partial: "layouts/shered/footer"%>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
