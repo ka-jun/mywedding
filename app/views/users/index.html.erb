@@ -20,7 +20,7 @@
             <section class="py-5">
                 <div class="container px-5">
                     <div class="col-lg-6 col-xl-7">
-                        <%= image_tag @staff_member.image.variant(resize: '500x500'), class:"bg-featured-blog" %>
+                        <%# <%= image_tag @user.image.variant(resize: '500x500'), class:"bg-featured-blog" %> %>
                     </div>
                 </div>
             </section>
@@ -29,27 +29,29 @@
                     <div class="row gx-5">
                     <%# ここからNewsの部分 %>
                         <div class="col-xl-8">
-                            <h2 class="fw-bolder fs-5 mb-4">Profile</h2>
+                            <h2 class="fw-bolder fs-5 mb-4">Couple Profile</h2>
                             <!-- News item-->
                             <div class="mb-5">
                                 <div class="small text-muted">area</div>
-                                <h5><%= @staff_member.area %></h5></a>
+                                <h5><%= @user.arel%></h5></a>
                             </div>
                             <div class="mb-4">
                                 <div class="small text-muted">name</div>
-                                <h5><%= @staff_member.first_name %>
-                                <%= @staff_member.last_name %>
+                                <h5><%= @user.first_name1 %>
+                                <%= @user.last_name %>
                                 </h5></a>
+                            </div>
+                                <div class="mb-4">
+                                <div class="small text-muted">name</div>
+                                <h5><%= @user.first_name2 %>
+                                <%= @user.last_name %>
+                                </h5>
                             </div>
                             <!-- News item-->
                             <div class="mb-5">
-                                <div class="small text-muted">since</div>
-                                <h5><%= @staff_member.since %>
+                                <div class="small text-muted">anniversary</div>
+                                <h5><%= @user.anniversary %>
                                 </h5></a>
-                            </div>
-                            <div class="mb-5">
-                                <div class="small text-muted">comment</div>
-                                <h5><%= @staff_member.text %></h5></a>
                             </div>
                         </div>
                     </div>

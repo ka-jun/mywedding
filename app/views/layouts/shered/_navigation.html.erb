@@ -1,33 +1,32 @@
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container px-5">
-          <%= link_to 'My Wedding', root_path, class:"navbar-brand" %>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <% if user_signed_in? %>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-              <%= link_to 'User My page', 'user_path(@user.id)', class:"nav-link"%></a></li>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link"%></a></li>
-              </li>
-            <% elsif staff_member_signed_in? %>
-              <li class="nav-item dropdown">
-              <%= link_to 'Staff My page', '#', class:"nav-link"%></a></li>
-              <%= link_to 'Logout', destroy_staff_member_session_path(@staff_members.id), method: :delete, class:"nav-link"%></a></li>
-              </li>
-            <% else %>
-              <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Couple User</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                  <li><%= link_to 'Sign up', new_user_registration_path, class:"dropdown-item" %></li>
-                  <li><%= link_to 'Login', new_user_session_path, class:"dropdown-item" %></li>
-              </ul>
-              <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Staff Member</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                  <li><%= link_to 'Sign up', new_staff_member_registration_path, class:"dropdown-item" %></li>
-                  <li><%= link_to 'Login', new_staff_member_session_path, class:"dropdown-item" %></li>
-              </ul>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-5">
+        <%= link_to 'My Wedding', root_path, class:"navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <% if user_signed_in? %>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+            <%= link_to 'User My page', user_path, class:"nav-link"%></a></li>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link"%></a></li>
+            </li>
+          <% elsif staff_member_signed_in? %>
+            <li class="nav-item dropdown">
+            <%= link_to 'Staff My page', "#", class:"nav-link"%></li>
+            <%= link_to 'Logout', destroy_staff_member_session_path, method: :delete, class:"nav-link"%></li>
+          <% else %>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" role="button" data-bs-toggle="dropdown" aria-expanded="false">Couple User</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                <li><%= link_to 'Sign up', new_user_registration_path, class:"dropdown-item" %></li>
+                <li><%= link_to 'Login', new_user_session_path, class:"dropdown-item" %></li>
             </ul>
-            <% end %>
-          </div>
-      </div>
-  </nav>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Staff Member</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                <li><%= link_to 'Sign up', new_staff_member_registration_path, class:"dropdown-item" %></li>
+                <li><%= link_to 'Login', new_staff_member_session_path, class:"dropdown-item" %></li>
+            </ul>
+          </ul>
+          <% end %>
+        </div>
+    </div>
+</nav>
