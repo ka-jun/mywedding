@@ -3847,14 +3847,16 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  justify-content: flex-end;
 }
 
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #0d6efd;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  justify-content: flex-end;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
@@ -3990,6 +3992,7 @@ textarea.form-control-lg {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar-toggler {
@@ -10864,4 +10867,8 @@ html {
 .staff_members {
   height: 30vw;
   width: 300px;
+}
+
+.click {
+  list-style: none;
 }

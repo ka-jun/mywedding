@@ -4,6 +4,7 @@ class StaffMembersController < ApplicationController
 
   def index
     @staff_members = StaffMember.order('created_at DESC')
+    @user = User.all
   end
 
   def new
@@ -11,7 +12,6 @@ class StaffMembersController < ApplicationController
   end
 
   def show
-    
   end
 
   def edit

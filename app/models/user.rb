@@ -1,19 +1,16 @@
-class StaffMember < ApplicationRecord
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one_attached :image
-  belongs_to :user
+  has_many :staff_members
 
   with_options presence: true do
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :last_name
-    validates :first_name
+    validates :first_name1
+    validates :first_name2
     validates :area
-    validates :since
-    validates :text
-    validates :image
   end
+    
 end
