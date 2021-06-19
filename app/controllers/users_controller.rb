@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :move_to_index, only: :show
 
   def show
     @user = User.find(params[:id])
@@ -8,9 +7,12 @@ class UsersController < ApplicationController
 
 
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:user).permit(:last_name, :first_name1, :first_name2, :area, :anniversary)
-  # end
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path
+    end
+  end
+
 end
