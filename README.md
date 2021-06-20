@@ -11,8 +11,7 @@
 | since              | date   | null: false | 
 | text               | text   | null: false | 
 
-
-# Form
+# form
 | Column | Type | Options     | 
 | ------ | ---- | ----------- | 
 | text   | text | null: false | 
