@@ -11,16 +11,12 @@
 | since              | date   | null: false | 
 | text               | text   | null: false | 
 
-### Association
-has_many :tweets
 
-# tweet
+# form
 | Column | Type | Options     | 
 | ------ | ---- | ----------- | 
 | text   | text | null: false | 
 
-### Association
-belongs_to :staff_member
 
 
 # user
@@ -33,5 +29,3 @@ belongs_to :staff_member
 | first_name2        | string  | null: false | 
 | anniversary        | date    |             | 
 | area               | integer | null: false | 
-
-# tag
