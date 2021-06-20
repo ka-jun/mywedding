@@ -11,12 +11,10 @@
 | since              | date   | null: false | 
 | text               | text   | null: false | 
 
-
 # form
 | Column | Type | Options     | 
 | ------ | ---- | ----------- | 
 | text   | text | null: false | 
-
 
 
 # user
