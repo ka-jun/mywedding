@@ -20,7 +20,7 @@ has_many :tweets
 | text   | text | null: false | 
 
 ### Association
-belongs_to :staff_menber
+belongs_to :staff_member
 
 
 # user

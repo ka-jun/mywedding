@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+        <%= render partial: "layouts/shered/navigation" %>
+            <!-- Staffmember.image -->
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="col-lg-6 col-xl-7">
+                        <%= image_tag "user_mypage.jpg",resize: '500x500', class:"bg-featured-blog" %>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 bg-light">
+                <div class="container px-5">
+                    <div class="row gx-5">
+                    <%# ここからNewsの部分 %>
+                        <div class="col-xl-8">
+                            <h2 class="fw-bolder fs-5 mb-4">Couple Profile</h2>
+                            <!-- News item-->
+                            <div class="mb-5">
+                                <div class="small text-muted">area</div>
+                                <h5><%= @user.area%></h5></a>
+                            </div>
+                            <div class="mb-4">
+                                <div class="small text-muted">name</div>
+                                <h5><%= @user.first_name1 %>
+                                <%= @user.last_name %>
+                                </h5></a>
+                            </div>
+                                <div class="mb-4">
+                                <div class="small text-muted">name</div>
+                                <h5><%= @user.first_name2 %>
+                                <%= @user.last_name %>
+                                </h5>
+                            </div>
+                            <!-- News item-->
+                            <div class="mb-5">
+                                <div class="small text-muted">anniversary</div>
+                                <h5><%= @user.anniversary %>
+                                </h5></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Footer-->
+        <%= render partial: "layouts/shered/footer" %>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
