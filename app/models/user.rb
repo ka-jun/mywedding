@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :staff_members
+  # has_many :staff_members
 
   with_options presence: true do
     with_options format: { with: /\A[a-zA-Z]+\z/ } do
