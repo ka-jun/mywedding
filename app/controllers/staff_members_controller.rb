@@ -12,9 +12,14 @@ class StaffMembersController < ApplicationController
   end
 
   def show
+    @contact = Contact.new
   end
 
   def edit
+  end
+
+  def create
+    @staff_member = StaffMember.create(staff_member_params)
   end
 
   private

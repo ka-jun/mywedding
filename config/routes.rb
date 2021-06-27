@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: "staff_members#index"
 
-  resources :staff_members
+  resources :staff_members do
+    resources :contacts
+  end
   resources :users
 end

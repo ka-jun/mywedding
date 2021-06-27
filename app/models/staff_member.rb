@@ -5,7 +5,7 @@ class StaffMember < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
-  # belongs_to :user
+  has_many :contacts
 
   with_options presence: true do
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }

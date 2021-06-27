@@ -56,6 +56,15 @@
                 </div>
             </section>
             <section>
+            <div class="contact">
+                <% if user_signed_in? %>
+                    <%= form_with(model: [@staff_member, @contact], local: true) do |contact| %>
+                        <%= contact.text_area :text, placeholder: "問い合わせ内容を入力" %>
+                        <%= contact.submit "SEND" %>
+                    <% end %>
+                <% else %>
+                <strong><p>※※※ 問い合わせをするには新規登録/ログインが必要です ※※※</p></strong>
+                <% end %>
             </section>
         <!-- Footer-->
         <%= render partial: "layouts/shered/footer" %>
