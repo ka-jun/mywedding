@@ -13,6 +13,7 @@ class StaffMembersController < ApplicationController
 
   def show
     @contact = Contact.new
+    @contacts = @staff_member.contacts.includes(:user)
   end
 
   def edit
