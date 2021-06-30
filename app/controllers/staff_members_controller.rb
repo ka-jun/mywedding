@@ -1,6 +1,7 @@
 class StaffMembersController < ApplicationController
-  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_staff_menber, only: :show
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   def index
     @staff_members = StaffMember.order('created_at DESC')
@@ -32,5 +33,7 @@ class StaffMembersController < ApplicationController
   def set_staff_menber
     @staff_member = StaffMember.find(params[:id])
   end
+
+
 
 end

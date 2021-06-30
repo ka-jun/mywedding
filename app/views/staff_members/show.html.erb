@@ -63,15 +63,17 @@
                         <%= contact.submit "SEND" %>
                     <% end %>
                 <% elsif staff_member_signed_in? %>
-                    <div class="contacts">
-                        <h4>＜お問い合わせ一覧＞</h4>
-                        <% @contacts.each do |contact| %>
-                            <p>
-                            <strong><%= link_to contact.user.last_name, "/users/#{contact.user_id}" %>様：</strong>
-                            <%= contact.text %>
-                            </p>
-                        <% end %>
-                    </div>
+                    <% if current_staff_member.id == @staff_member.id %>
+                        <div class="contacts">
+                            <h4>＜お問い合わせ一覧＞</h4>
+                            <% @contacts.each do |contact| %>
+                                <p>
+                                <strong><%= link_to contact.user.last_name, "/users/#{contact.user_id}" %>様：</strong>
+                                <%= contact.text %>
+                                </p>
+                            <% end %>
+                        </div>
+                    <% end %>
                 <% else %>
                 <strong><p>※※※ 問い合わせをするには新規登録/ログインが必要です ※※※</p></strong>
                 <% end %>
