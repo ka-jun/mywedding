@@ -1,4 +1,5 @@
 class StaffMembersController < ApplicationController
+  before_action :authenticate_staff_member!, only: [:mypage]
   before_action :set_staff_menber, only: :show
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -15,6 +16,10 @@ class StaffMembersController < ApplicationController
   def show
     @contact = Contact.new
     @contacts = @staff_member.contacts.includes(:user)
+  end
+
+  def mypage
+    redirect_to staff_member_path(current_staff_member)
   end
 
   def edit
