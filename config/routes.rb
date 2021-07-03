@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root to: "staff_members#index"
   get '/mypage', to: 'staff_members#mypage'
+  get '/userpage', to: 'users#userpage'
 
   resources :staff_members do
     resources :contacts

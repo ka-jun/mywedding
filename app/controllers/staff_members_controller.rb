@@ -1,6 +1,6 @@
 class StaffMembersController < ApplicationController
   before_action :authenticate_staff_member!, only: [:mypage]
-  before_action :set_staff_menber, only: :show
+  before_action :set_staff_member, only: :show
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
@@ -15,6 +15,7 @@ class StaffMembersController < ApplicationController
 
   def show
     @contact = Contact.new
+    @contact = Contact.find(params[:id])
     @contacts = @staff_member.contacts.includes(:user)
   end
 
@@ -35,7 +36,7 @@ class StaffMembersController < ApplicationController
     params.require(:staff_member).permit(:image, :last_name, :first_name, :area, :since, :text)
   end
 
-  def set_staff_menber
+  def set_staff_member
     @staff_member = StaffMember.find(params[:id])
   end
 

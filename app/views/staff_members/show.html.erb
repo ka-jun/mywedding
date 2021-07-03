@@ -52,31 +52,33 @@
                                 <h5><%= @staff_member.text %></h5></a>
                             </div>
                         </div>
+                    <% if user_signed_in? %>
+                        <%= form_with(model: [@staff_member, @contact], local: true) do |contact| %>
+                            <%= contact.text_area :text, placeholder: "問い合わせ内容を入力" %>
+                            <%= contact.submit "SEND" %>
+                        <% end %>
+                    <% elsif staff_member_signed_in? && current_staff_member.id == @staff_member.id == @contact.staff_member_id %>
+                            <div class="contacts">
+                            <h2 class="fw-bolder fs-5 mb-4">Contact</h2>
+                                <% @contacts.each do |contact| %>
+
+                                    <ul>
+                                    <strong><li>
+                                    <%= l contact.created_at, format: :short %>
+                                    <%= link_to contact.user.last_name, user_path(contact.user_id) %>さま:</strong>
+                                    <%= contact.text.truncate(30) %></li>
+                                    </p>
+                                <% end %>
+                            </div>
+                    <% else %>
+                    <strong><p>※※※ 問い合わせをするには新規登録/ログインが必要です ※※※</p></strong>
+                    <% end %>
                     </div>
                 </div>
             </section>
             <section>
             <div class="contact">
-                <% if user_signed_in? %>
-                    <%= form_with(model: [@staff_member, @contact], local: true) do |contact| %>
-                        <%= contact.text_area :text, placeholder: "問い合わせ内容を入力" %>
-                        <%= contact.submit "SEND" %>
-                    <% end %>
-                <% elsif staff_member_signed_in? %>
-                    <% if current_staff_member.id == @staff_member.id %>
-                        <div class="contacts">
-                            <h4>＜お問い合わせ一覧＞</h4>
-                            <% @contacts.each do |contact| %>
-                                <p>
-                                <strong><%= link_to contact.user.last_name, "/users/#{contact.user_id}" %>様：</strong>
-                                <%= contact.text %>
-                                </p>
-                            <% end %>
-                        </div>
-                    <% end %>
-                <% else %>
-                <strong><p>※※※ 問い合わせをするには新規登録/ログインが必要です ※※※</p></strong>
-                <% end %>
+
             </section>
         <!-- Footer-->
         <%= render partial: "layouts/shered/footer" %>
