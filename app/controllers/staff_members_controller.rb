@@ -13,7 +13,7 @@ class StaffMembersController < ApplicationController
   end
 
   def show
-    # @contact = Contact.new
+    @contact = Contact.new
     # @contact = Contact.find(params[:id])
     @contacts = @staff_member.contacts.includes(:user)
   end
