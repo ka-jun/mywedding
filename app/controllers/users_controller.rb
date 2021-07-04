@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:userpage]
+  before_action :move_to_index, only: :show
 
   # ユーザーページ（userのログインは不要だが問い合わせしたスタッフは見れる）
   def show
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   private
 
   def move_to_index
-    unless user_signed_in?
+    unless user_signed_in? && staff_member_signed_in?
       redirect_to root_path
     end
   end

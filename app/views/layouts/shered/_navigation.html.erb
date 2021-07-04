@@ -6,14 +6,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <% if user_signed_in? %>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-            <%= link_to "#{current_user.last_name}様", "/users/#{current_user.id}", class:"nav-link"%></a></li> 
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link"%></a></li>
-            </li>
+            <li><%= link_to "#{current_user.last_name}様", "/users/#{current_user.id}", class:"nav-link"%></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link"%></li>
           <% elsif staff_member_signed_in? %>
-            <li class="nav-item dropdown">
-            <%= link_to "#{current_staff_member.last_name}様", mypage_path, class:"nav-link"%></li> 
-            <%= link_to 'Logout', destroy_staff_member_session_path, method: :delete, class:"nav-link"%></li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li><%= link_to "#{current_staff_member.last_name}様", mypage_path, class:"nav-link"%></li>
+            <li><%= link_to 'Logout', destroy_staff_member_session_path, method: :delete, class:"nav-link"%></li>
           <% else %>
             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" role="button" data-bs-toggle="dropdown" aria-expanded="false">Couple User</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
@@ -21,7 +19,7 @@
                 <li><%= link_to 'Login', new_user_session_path, class:"dropdown-item" %></li>
             </ul>
             <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" role="button" data-bs-toggle="dropdown" aria-expanded="false">Staff Member</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio" >
                 <li><%= link_to 'Sign up', new_staff_member_registration_path, class:"dropdown-item" %></li>
                 <li><%= link_to 'Login', new_staff_member_session_path, class:"dropdown-item" %></li>
             </ul>
