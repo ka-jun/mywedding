@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @contact = Contact.find(params[:id])
   end
 
-    # userマイページ(userのログインは必須)
+  # userマイページ(userのログインは必須)
   def userpage
     redirect_to user_path(current_user)
   end
@@ -16,11 +16,8 @@ class UsersController < ApplicationController
   private
 
   def move_to_index
-    unless user_signed_in? && staff_member_signed_in?
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && staff_member_signed_in?
   end
 
-# 問い合わせされていないスタッフから直接アクセスがあった場合root_path誘導
-
+  # 問い合わせされていないスタッフから直接アクセスがあった場合root_path誘導
 end
