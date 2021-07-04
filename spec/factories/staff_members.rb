@@ -1,15 +1,14 @@
 FactoryBot.define do
   factory :staff_member do
-
-    email                   {Faker::Internet.free_email}
-    password                {Faker::Internet.password(min_length: 6)}
-    password_confirmation   {password}
-    last_name               {'yamada'}
-    first_name              {'hanako'}
-    area                    {'北海道'}
-    since                   { 2020/01/01 }
-    text                    {"昨年からフリーランスでプランナーとヘアメイクを担当しております"}
-    image                   {Faker::Lorem.sentence}
+    email                   { Faker::Internet.free_email }
+    password                { Faker::Internet.password(min_length: 6) }
+    password_confirmation   { password }
+    last_name               { 'yamada' }
+    first_name              { 'hanako' }
+    area                    { '北海道' }
+    since                   { 2020 / 0o1 / 0o1 }
+    text                    { '昨年からフリーランスでプランナーとヘアメイクを担当しております' }
+    image                   { Faker::Lorem.sentence }
   end
 
   after(:build) do |staff_member|

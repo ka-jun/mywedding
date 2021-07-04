@@ -1,6 +1,7 @@
 class StaffMembersController < ApplicationController
+  before_action :authenticate_staff_member!, only: [:mypage]
+  before_action :set_staff_member, only: :show
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_staff_menber, only: :show
 
   def index
     @staff_members = StaffMember.order('created_at DESC')
@@ -12,9 +13,20 @@ class StaffMembersController < ApplicationController
   end
 
   def show
+    @contact = Contact.new
+    # @contact = Contact.find(params[:id])
+    @contacts = @staff_member.contacts.includes(:user)
+  end
+
+  def mypage
+    redirect_to staff_member_path(current_staff_member)
   end
 
   def edit
+  end
+
+  def create
+    @staff_member = StaffMember.create(staff_member_params)
   end
 
   private
@@ -23,8 +35,7 @@ class StaffMembersController < ApplicationController
     params.require(:staff_member).permit(:image, :last_name, :first_name, :area, :since, :text)
   end
 
-  def set_staff_menber
+  def set_staff_member
     @staff_member = StaffMember.find(params[:id])
   end
-
 end

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :staff_members
 
   root to: "staff_members#index"
+  get '/mypage', to: 'staff_members#mypage'
+  get '/userpage', to: 'users#userpage'
 
-  resources :staff_members
+  resources :staff_members do
+    resources :contacts
+  end
   resources :users
 end
