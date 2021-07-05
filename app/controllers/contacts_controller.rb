@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contacts = Contact.all
+
   end
 
   def create
@@ -11,7 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-    @contact = Contact.find([:id])
+    @contact = Contact.find([:staff_member_id])
   end
 
   private

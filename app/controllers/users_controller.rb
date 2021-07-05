@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:userpage]
-  before_action :move_to_index, only: :show
+  # before_action :move_to_index, only: :show
 
   # ユーザーページ（userのログインは不要だが問い合わせしたスタッフは見れる）
   def show

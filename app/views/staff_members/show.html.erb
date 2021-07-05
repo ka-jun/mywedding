@@ -57,9 +57,13 @@
                     <% elsif staff_member_signed_in? && current_staff_member.id == @staff_member.id %>
                             <div class="contacts">
                             <h2 class="fw-bolder fs-5 mb-4">Contact</h2>
-                            <%# userの問い合わせ内容を表示させる %>
-                            <%= "（例）・TestUser様：結婚式は30名ほどで50万円以内で考えておりますが可能でしょうか？"%>
-                            </div>
+                                <% @contacts.each do |contact| %>
+                                    <ul>
+                                    <li>
+                                    <%= l contact.created_at, format: :short %>
+                                    <%= link_to contact.user.last_name, user_path %>さま:
+                                    <%= contact.text.truncate(60) %></li></ul>
+                                <% end %>
                     <% else %>
                     <strong><p>※問い合わせをするには新規登録/ログインが必要です</p></strong>
                     <% end %>
