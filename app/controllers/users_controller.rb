@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   # ユーザーページ（userのログインは不要だが問い合わせしたスタッフは見れる）
   def show
+    # binding.pry
     @user = User.find(params[:id])
     @contact = Contact.find(params[:id])
   end
