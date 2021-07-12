@@ -33,6 +33,7 @@ class StaffMembersController < ApplicationController
 
   def staff_member_params
     params.require(:staff_member).permit(:image, :last_name, :first_name, :area, :since, :text)
+    .merge(staff_member_id: current_staff_member.id)
   end
 
   def set_staff_member

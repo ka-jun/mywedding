@@ -11,9 +11,9 @@ class ContactsController < ApplicationController
     # 問い合わせ完了しました、と表示させるページを作成する
   end
 
-  def show
-    @contact = Contact.find([:staff_member_id])
-  end
+  # def show
+  #   @contact = Contact.find([:staff_member_id])
+  # end
 
   private
 

@@ -50,20 +50,25 @@
                             </div>
                         </div>
                     <% if user_signed_in? %>
-                        <%= form_with(model: [@staff_member, @contact], local: true) do |contact| %>
+                        <%= form_with(model: [@staff_member, @user, @contact], local: true) do |contact| %>
                             <%= contact.text_area :text, placeholder: "問い合わせ内容を入力", class:"text_area" %>
                             <%= contact.submit "SEND" %>
                         <% end %>
                     <% elsif staff_member_signed_in? && current_staff_member.id == @staff_member.id %>
                             <div class="contacts">
                             <h2 class="fw-bolder fs-5 mb-4">Contact</h2>
+                            <%if @contacts.present? %>
                                 <% @contacts.each do |contact| %>
                                     <ul>
                                     <li>
                                     <%= l contact.created_at, format: :short %>
-                                    <%= link_to contact.user_id, "/users/#{contact.user_id}" %>さま:
-                                    <%= contact.staff_member_id.truncate(60) %></li></ul>
+                                    <%= link_to contact.user.last_name, "/users/#{contact.user_id}" %>さま:
+                                    <%= contact.text.truncate(60) %></li></ul>
                                 <% end %>
+                            </div>
+                            <% else %>
+                            <%= "問い合わせはありません。" %>
+                            <% end %>
                     <% else %>
                     <strong><p>※問い合わせをするには新規登録/ログインが必要です</p></strong>
                     <% end %>

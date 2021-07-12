@@ -19,3 +19,4 @@ class StaffMember < ApplicationRecord
     end
   end
 end
+ 
