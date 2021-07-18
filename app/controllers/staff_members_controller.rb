@@ -14,10 +14,9 @@ class StaffMembersController < ApplicationController
 
   def show
     @contact = Contact.new
-    # @contact = Contact.find(params[:id])
     @contacts = @staff_member.contacts.includes(:user)
   end
-
+  
   def mypage
     redirect_to staff_member_path(current_staff_member)
   end
@@ -33,7 +32,7 @@ class StaffMembersController < ApplicationController
 
   def staff_member_params
     params.require(:staff_member).permit(:image, :last_name, :first_name, :area, :since, :text)
-    .merge(staff_member_id: current_staff_member.id)
+    .merge(staff_member_id: current_staff_member.id, contact_id: contact.id )
   end
 
   def set_staff_member

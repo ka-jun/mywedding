@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :contacts
+  has_many :staff_member
 
   with_options presence: true do
     with_options format: { with: /\A[a-zA-Z]+\z/ } do

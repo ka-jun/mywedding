@@ -1,9 +1,4 @@
 class ContactsController < ApplicationController
-  def new
-    @contact = Contact.new
-    @contacts = Contact.all
-
-  end
 
   def create
     @contact = Contact.create(contact_params)
@@ -11,9 +6,9 @@ class ContactsController < ApplicationController
     # 問い合わせ完了しました、と表示させるページを作成する
   end
 
-  # def show
-  #   @contact = Contact.find([:staff_member_id])
-  # end
+  def show
+    @contact = Contact.find(params[:staff_member_id])
+  end
 
   private
 

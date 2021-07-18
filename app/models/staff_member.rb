@@ -6,6 +6,7 @@ class StaffMember < ApplicationRecord
 
   has_one_attached :image
   has_many :contacts
+  has_many :user
 
   with_options presence: true do
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
@@ -19,4 +20,3 @@ class StaffMember < ApplicationRecord
     end
   end
 end
- 

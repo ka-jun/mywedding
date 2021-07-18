@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:userpage]
-  # before_action :move_to_index, only: :show
+  before_action :move_to_index, only: :show
 
   # ユーザーページ（userのログインは不要だが問い合わせしたスタッフは見れる）
   def show
-    # binding.pry
     @user = User.find(params[:id])
   end
 
@@ -16,8 +15,13 @@ class UsersController < ApplicationController
   private
 
   def move_to_index
-    redirect_to root_path unless user_signed_in? && staff_member_signed_in?
+    @contact = Contact.find(params[:contact_id])
+    redirect_to root_path 
+    unless user_signed_in? && @contact.user_id == current_user.id || staff_member_signed_in? && @contact.staff_member_id == current_staff_member.id
+    end
   end
 
-  # 問い合わせされていないスタッフから直接アクセスがあった場合root_path誘導
+  def user_params
+    params.require(:user).permit(:email, ).merge(user_id: current_user.id, staff_member_id: params[:staff_member_id])
+  end
 end

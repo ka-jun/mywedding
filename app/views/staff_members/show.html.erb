@@ -62,7 +62,7 @@
                                     <ul>
                                     <li>
                                     <%= l contact.created_at, format: :short %>
-                                    <%= link_to contact.user.last_name, "/users/#{contact.user_id}" %>さま:
+                                    <%= link_to contact.user.last_name, user_path(contact.user, contact_id: contact.id)%>さま:
                                     <%= contact.text.truncate(60) %></li></ul>
                                 <% end %>
                             </div>
