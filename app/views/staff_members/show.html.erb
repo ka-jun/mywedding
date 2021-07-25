@@ -21,6 +21,7 @@
                 <div class="container px-5">
                     <div class="col-lg-6 col-xl-7">
                         <%= image_tag @staff_member.image.variant(resize: '500x500'), class:"bg-featured-blog" %>
+                        <%# <%= link_to "edit", edit_staff_member_path(current_staff_member), class:"btn btn-primary btn-lg px-4 me-sm-3" %>
                     </div>
                 </div>
             </section>
@@ -62,7 +63,7 @@
                                     <ul>
                                     <li>
                                     <%= l contact.created_at, format: :short %>
-                                    <%= link_to contact.user.last_name, user_path(contact.user, contact_id: contact.id)%>さま:
+                                    <%= link_to contact.user.last_name, user_path(contact.user, contact_id: contact.id) %>さま:
                                     <%= contact.text.truncate(60) %></li></ul>
                                 <% end %>
                             </div>

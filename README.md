@@ -11,7 +11,8 @@
 | since              | date   | null: false | 
 | text               | text   | null: false | 
 
-# Corm
+# Contact
+
 | Column | Type | Options     | 
 | ------ | ---- | ----------- | 
 | text   | text | null: false | 
