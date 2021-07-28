@@ -3,7 +3,7 @@
 # Staff_Members
 | Column             | Type   | Options     | 
 | ------------------ | ------ | ----------- | 
-| email              | string | unique:true | 
+| email              | string | null: false | 
 | encrypted_password | string | null: false | 
 | last_name          | string | null: false | 
 | first_name         | string | null: false | 
