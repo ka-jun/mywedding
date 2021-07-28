@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user! only: :userpage
+  before_action :authenticate_user!, only: :userpage
 
     # userマイページ(userのログインは必須)
     def userpage
-      redirect_to :show
+      redirect_to user_path(current_user)
     end
     
   # ユーザーページ（userのログインは不要だが問い合わせしたスタッフは見れる）
