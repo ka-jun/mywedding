@@ -11,11 +11,20 @@
 | since              | date   | null: false | 
 | text               | text   | null: false | 
 
+### Association
+  has_many :contacts
+  has_many :user
+
 # Contact
 
 | Column | Type | Options     | 
 | ------ | ---- | ----------- | 
 | text   | text | null: false | 
+
+### Association
+  belongs_to :user
+  belongs_to :staff_member
+
 
 
 # user
@@ -27,4 +36,8 @@
 | first_name1        | string  | null: false | 
 | first_name2        | string  | null: false | 
 | anniversary        | date    |             | 
-| area               | integer | null: false | 
+| area               | string  | null: false | 
+
+### Association
+  has_many :contacts
+  has_many :staff_members
