@@ -15,11 +15,10 @@ My Wedding
 ブライダル業界に特化した紹介サイトがあったら双方の課題を解決実現できるのではと考案いたしました。
 
 ## 工夫したポイント
-・userとstaffでログインページを分けております。
-・ログインページをuserとstaff_memberで分けることにより、新規登録後にstaff一覧に表示されるか、されないかを分けました。
-・user、staff共にユーザーページ（登録者以外の人が見れるページ）とマイページ（登録者のみが見れるページ）に分けることにより、ログインが必要か必要じゃないかを分けました。
-・userからstaffへ問い合わせした際、問い合わせされた本人しか見れないようにアクセス制限をかけました。
-
+- userとstaffでログインページを分けております。
+- ログインページをuserとstaff_memberで分けることにより、新規登録後にstaff一覧に表示されるか、されないかを分けました。
+- user、staff共にユーザーページ（登録者以外の人が見れるページ）とマイページ（登録者のみが見れるページ）に分けることにより、ログインが必要か必要じゃないかを分けました。
+- userからstaffへ問い合わせした際、問い合わせされた本人しか見れないようにアクセス制限をかけました。
 
 
 ## バックエンド
@@ -51,8 +50,8 @@ Heroku
 | text               | text   | null: false | 
 
 ### Association
-  has_many :contacts
-  has_many :user
+* has_many :contacts
+* has_many :user
 
 ## Contact
 
@@ -61,8 +60,8 @@ Heroku
 | text   | text | null: false | 
 
 ### Association
-  belongs_to :user
-  belongs_to :staff_member
+* belongs_to :user
+* belongs_to :staff_member
 
 ## user
 | Column             | Type    | Options     | 
@@ -76,5 +75,5 @@ Heroku
 | area               | string  | null: false | 
 
 ### Association
-  has_many :contacts
-  has_many :staff_members
+* has_many :contacts
+* has_many :staff_members
