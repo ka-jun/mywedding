@@ -14,6 +14,28 @@ My Wedding
 結婚式場の契約ではなくフリーウェディングプランナーの方が実現しやすいため
 ブライダル業界に特化した紹介サイトがあったら双方の課題を解決実現できるのではと考案いたしました。
 
+## DEMO
+
+userとstaffでログインページを分けております。
+<img width="721" alt="スクリーンショット 2021-07-24 19 26 23" src="https://user-images.githubusercontent.com/77524367/128669797-f7cb4bba-ad24-47dc-91d4-389079d91e23.png">
+
+新規登録したstaffはstaff一覧に表示されます。userはここから気になるstaffを選択します。
+
+<img width="721" alt="スクリーンショット 2021-07-24 19 26 39" src="https://user-images.githubusercontent.com/77524367/128669867-651fa5d0-2e08-4376-aa1c-b4739da3ca5a.png">
+
+「click!!」をクリックいただくと、staffの詳細ページへ進みます。
+
+<img width="721" alt="スクリーンショット 2021-07-24 19 41 50" src="https://user-images.githubusercontent.com/77524367/128669884-dd9f909f-acef-4ba8-b497-b5d0222521dd.png">
+
+userは気になるstaffを問い合わせ内容を入力いたします。
+staffはマイページにお問い合わせ頂いた内容が表示され、userのページを閲覧することができ、メールでお問いわせすることができます。
+
+<img width="1328" alt="スクリーンショット 2021-07-25 17 47 04" src="https://user-images.githubusercontent.com/77524367/128670106-4ee73ca9-7695-4f8c-93e4-eef51ab3d276.png">
+
+
+<img width="1067" alt="スクリーンショット 2021-07-25 17 48 38" src="https://user-images.githubusercontent.com/77524367/128670112-bac69ed1-15e6-4d05-b878-eec0578d83f0.png">
+
+
 ## 工夫したポイント
 - userとstaffでログインページを分けております。
 - ログインページをuserとstaff_memberで分けることにより、新規登録後にstaff一覧に表示されるか、されないかを分けました。
