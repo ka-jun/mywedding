@@ -58,6 +58,20 @@ AWS（S3）
 ## WEBサーバー（本番環境）
 Heroku
 
+## ソース管理
+GitHub,GithubDesktop
+
+## テスト
+RSpec
+
+## エディタ
+VSCode
+
+## 課題や今後実装したい機能
+- 不正防止のアクセス制限
+- 検索機能
+- タグ機能
+- staffの投稿機能
 
 
 ## Staff_Members
