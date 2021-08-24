@@ -64,7 +64,7 @@
                                     <li>
                                     <%= l contact.created_at, format: :short %>
                                     <%= link_to contact.user.last_name, user_path(contact.user, contact_id: contact.id) %>さま:
-                                    <%= contact.text.truncate(60) %></li></ul>
+                                    <%= contact.text %></li></ul>
                                 <% end %>
                             </div>
                             <% else %>
