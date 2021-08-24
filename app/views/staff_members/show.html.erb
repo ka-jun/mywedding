@@ -58,6 +58,7 @@
                     <% elsif staff_member_signed_in? && current_staff_member.id == @staff_member.id %>
                             <div class="contacts">
                             <h2 class="fw-bolder fs-5 mb-4">Contact</h2>
+                            <%# 空の投稿でエラーメッセージ %>
                             <%if @contacts.present? %>
                                 <% @contacts.each do |contact| %>
                                     <ul>

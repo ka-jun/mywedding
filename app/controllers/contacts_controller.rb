@@ -2,8 +2,11 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.create(contact_params)
-    redirect_to root_path root_url
-    # 問い合わせ完了しました、と表示させるページを作成する
+    if @contact.valid?
+      @contact.save
+      return redirect_to root_path
+    end
+    # 問い合わせ完了しました、と表示させるページを作成
   end
 
   def show
